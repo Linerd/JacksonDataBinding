@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "cost_types": {
+      "num_routing": {
+        "cost_mode": "numerical",
+        "cost_metric": "routingcost",
+        "description": "My default"
+      },
+      "num_hop": {
+        "cost_mode": "numerical",
+        "cost_metric": "hopcount"
+      },
+      "ord_routing": {
+        "cost_mode": "ordinal",
+        "cost_metric": "routingcost"
+      },
+      "ord_hop": {
+        "cost_mode": "ordinal",
+        "cost_metric": "hopcount"
+      }
+    },
+    "default_alto_network_map": "my-default-network-map"
+  }
+}
