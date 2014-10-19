@@ -1,0 +1,8 @@
+1.Meta has to be defined as a custom class, otherwise the client/server MUST use several type conversions to enable the get methods.
+2.The data part has to be defined as a Map, coz the key is a variable, which is proved to be a violation of the condition under which a Json Object can be transformed into a YANG model.
+3.If the value of a Map is a basic Java Type that cannot be inherited, like String, then defining it as basic type will make serialization easier. If custom classes are used, the output looks like this:
+{
+	"String variable name":"String variable value"
+}
+what we want is 
+"String variable value"

@@ -16,6 +16,11 @@ public class ResourceID {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return resourceID;
+	}
+
 	public void setResourceID(String resourceID) throws Exception {
 		if (resourceID.matches(regex)) {
 			throw new Exception(

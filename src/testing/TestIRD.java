@@ -16,10 +16,9 @@ public class TestIRD {
 		ObjectMapper om = new ObjectMapper();
 		InfoResourceDirectory response = om.readValue(jsondata,
 				InfoResourceDirectory.class);
-		// om.configure(SerializationFeature.INDENT_OUTPUT, true);
-		// StringWriter sw = new StringWriter();
-		// om.writeValue(sw, response);
-		// System.out.println(sw.toString());
-		System.out.println(response.getMeta().getCost_types().getClass());
+		om.configure(SerializationFeature.INDENT_OUTPUT, true);
+		StringWriter sw = new StringWriter();
+		om.writeValue(sw, response);
+		System.out.println(sw.toString());
 	}
 }

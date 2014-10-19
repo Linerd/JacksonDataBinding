@@ -11,7 +11,7 @@ import ALTO.base.CostType;
 import ALTO.base.VersionTag;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonSerialize(include = JsonSerialize.Inclusion.ALWAYS)
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public abstract class Meta {
 	@JsonProperty("cost-types")
 	protected Map<String, CostType> cost_types;

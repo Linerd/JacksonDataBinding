@@ -4,7 +4,7 @@ import java.util.Map;
 
 import ALTO.base.CostType;
 
-public class IRDMeta extends ALTO.base.Meta {
+public final class IRDMeta extends ALTO.base.Meta {
 
 	public Map<String, CostType> getCost_types() {
 		return super.cost_types;

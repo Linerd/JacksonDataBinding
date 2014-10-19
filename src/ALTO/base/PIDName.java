@@ -1,6 +1,7 @@
 package ALTO.base;
 
 public class PIDName {
+
 	String pid_name;
 	static final String regex = ".[^a-zA-Z0-9\\-:@_\\.].";
 	static final short length = 64;
@@ -29,5 +30,10 @@ public class PIDName {
 		} else {
 			this.pid_name = pid_name;
 		}
+	}
+
+	@Override
+	public String toString() {
+		return pid_name;
 	}
 }

@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class IRDResourceEntry {
 
 	@JsonProperty("media-type")
