@@ -1,8 +1,6 @@
 package ALTO.base;
 
-import net.sf.json.JSONString;
-
-public class ResourceID implements JSONString {
+public class ResourceID {
 	String resourceID;
 	static final String regex = ".[^a-zA-Z0-9\\-:@_\\.].";
 	static final short length = 64;
@@ -30,16 +28,6 @@ public class ResourceID implements JSONString {
 	}
 
 	public String getResourceID() {
-		return resourceID;
-	}
-
-	@Override
-	public String toJSONString() {
-		return resourceID;
-	}
-
-	@Override
-	public String toString() {
 		return resourceID;
 	}
 }

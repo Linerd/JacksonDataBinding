@@ -1,8 +1,6 @@
 package ALTO.base;
 
-import net.sf.json.JSONString;
-
-public class CostMetric implements JSONString {
+public class CostMetric {
 	String costmetric;
 	static final String regex = ".[^a-zA-Z0-9\\-:_\\.].";
 	static final short length = 32;
@@ -16,11 +14,6 @@ public class CostMetric implements JSONString {
 		} else {
 			this.costmetric = costmetric;
 		}
-	}
-
-	@Override
-	public String toJSONString() {
-		return costmetric;
 	}
 
 	public String getCostmetric() {
@@ -37,10 +30,4 @@ public class CostMetric implements JSONString {
 			this.costmetric = costmetric;
 		}
 	}
-
-	@Override
-	public String toString() {
-		return costmetric;
-	}
-
 }

@@ -1,4 +1,4 @@
-package test;
+package testing;
 
 public class TestRegex {
 	static String regex = ".[^a-zA-Z0-9\\-:@_\\.].";

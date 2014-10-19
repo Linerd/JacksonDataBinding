@@ -1,41 +1,41 @@
 {
   "meta":{
-    "cost_types":{
-      "num_routing":{
-        "cost_mode":"numerical",
-        "cost_metric":"routingcost",
+    "cost-types":{
+      "num-routing":{
+        "cost-mode":"numerical",
+        "cost-metric":"routingcost",
         "description":"My default"
       },
-      "num_hop":{
-        "cost_mode":"numerical",
-        "cost_metric":"hopcount"
+      "num-hop":{
+        "cost-mode":"numerical",
+        "cost-metric":"hopcount"
       },
-      "ord_routing":{
-        "cost_mode":"ordinal",
-        "cost_metric":"routingcost"
+      "ord-routing":{
+        "cost-mode":"ordinal",
+        "cost-metric":"routingcost"
       },
-      "ord_hop":{
-        "cost_mode":"ordinal",
-        "cost_metric":"hopcount"
+      "ord-hop":{
+        "cost-mode":"ordinal",
+        "cost-metric":"hopcount"
       }
     }
   },
   "resources":{
-    "filtered_network-map":{
+    "filtered-network-map":{
       "uri":"http://custom.alto.example.com/networkmap/filtered",
-      "media_type":"application/alto-networkmap+json",
+      "media-type":"application/alto-networkmap+json",
       "accepts":"application/alto-networkmapfilter+json",
       "uses":[
         "my-default-network-map"
       ]
     },
-    "filtered_cost_map":{
+    "filtered-cost-map":{
       "uri":"http://custom.alto.example.com/costmap/filtered",
-      "media_type":"application/alto-costmap+json",
+      "media-type":"application/alto-costmap+json",
       "accepts":"application/alto-costmapfilter+json",
       "capabilities":{
-        "cost_constraints":true,
-        "cost_type_names":[
+        "cost-constraints":true,
+        "cost-type-names":[
           "num-routing",
           "num-hop",
           "ord-routing",
@@ -46,11 +46,11 @@
         "my-default-network-map"
       ]
     },
-    "ordinal_routing_cost_map":{
+    "ordinal-routing-cost-map":{
       "uri":"http://custom.alto.example.com/ord/routingcost",
-      "media_type":"application/alto-costmap+json",
+      "media-type":"application/alto-costmap+json",
       "capabilities":{
-        "cost_type_names":[
+        "cost-type-names":[
           "ord-routing"
         ]
       },
@@ -58,11 +58,11 @@
         "my-default-network-map"
       ]
     },
-    "ordinal_hopcount_cost_map":{
+    "ordinal-hopcount-cost-map":{
       "uri":"http://custom.alto.example.com/ord/hopcount",
-      "media_type":"application/alto-costmap+json",
+      "media-type":"application/alto-costmap+json",
       "capabilities":{
-        "cost_type_names":[
+        "cost-type-names":[
           "ord-hop"
         ]
       },

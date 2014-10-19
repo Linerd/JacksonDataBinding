@@ -1,52 +1,50 @@
 package ALTO.base;
 
-import java.io.IOException;
-import java.io.StringWriter;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CostType {
-	CostMetric cost_metric;
-	CostMode cost_mode;
-	String desciption;
+	private enum CostModeValue {
+		numerical, ordinal;
+	}
 
-	public CostMetric getCost_metric() {
+	@JsonProperty("cost-mode")
+	CostModeValue cost_mode;
+
+	static final String regex = ".[^a-zA-Z0-9\\-:_\\.].";
+	static final short length = 32;
+	@JsonProperty("cost-metric")
+	String cost_metric;
+
+	String description;
+
+	public String getCost_metric() {
 		return cost_metric;
 	}
 
-	public void setCost_metric(CostMetric cost_metric) {
-		this.cost_metric = cost_metric;
+	public void setCostmetric(String costmetric) throws Exception {
+		if (costmetric.matches(regex)) {
+			throw new Exception(
+					"CostMetric format error, illegal character detected!");
+		} else if (costmetric.length() > length) {
+			throw new Exception("CostMetric format error, length exceed limit!");
+		} else {
+			this.cost_metric = costmetric;
+		}
 	}
 
-	public CostMode getCost_mode() {
+	public CostModeValue getCost_mode() {
 		return cost_mode;
 	}
 
-	public void setCost_mode(CostMode cost_mode) {
+	public void setCost_mode(CostModeValue cost_mode) {
 		this.cost_mode = cost_mode;
 	}
 
-	public String getDesciption() {
-		return desciption;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDesciption(String desciption) {
-		this.desciption = desciption;
-	}
-
-	@Override
-	public String toString() {
-		ObjectMapper om = new ObjectMapper();
-		om.configure(SerializationFeature.INDENT_OUTPUT, true);
-		StringWriter sw = new StringWriter();
-		try {
-			om.writeValue(sw, this);
-			return sw.toString();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

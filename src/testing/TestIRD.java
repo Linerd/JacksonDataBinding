@@ -1,4 +1,4 @@
-package test;
+package testing;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -7,21 +7,19 @@ import java.nio.file.Paths;
 
 import ALTO.IRD.InfoResourceDirectory;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class TestIRD {
 	public static void main(String[] args) throws IOException {
 		byte[] jsondata = Files.readAllBytes(Paths.get("IRD.txt"));
-
 		ObjectMapper om = new ObjectMapper();
-		om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		InfoResourceDirectory response = om.readValue(jsondata,
 				InfoResourceDirectory.class);
-		om.configure(SerializationFeature.INDENT_OUTPUT, true);
-		StringWriter sw = new StringWriter();
-		om.writeValue(sw, response);
-		System.out.println(sw.toString());
+		// om.configure(SerializationFeature.INDENT_OUTPUT, true);
+		// StringWriter sw = new StringWriter();
+		// om.writeValue(sw, response);
+		// System.out.println(sw.toString());
+		System.out.println(response.getMeta().getCost_types().getClass());
 	}
 }
